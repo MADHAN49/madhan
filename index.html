@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madhan Kumar A| Portfolio</title>
+    <link rel="shortcut icon" href="https://i.ibb.co/nhFpK5z/me.jpg" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #10b981;
+            --dark: #0f172a;
+            --light: #f8fafc;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            scroll-behavior: smooth;
+        }
+        
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .typewriter {
+            border-right: 3px solid var(--primary);
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--primary) }
+        }
+        
+        .flip-card {
+            perspective: 1000px;
+          }
+      
+          .flip-card-inner {
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+          }
+      
+          .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+          }
+      
+          .flip-card-front,
+          .flip-card-back {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+          }
+      
+          .flip-card-front {
+            transform: rotateY(0deg);
+          }
+      
+          .flip-card-back {
+            transform: rotateY(180deg);
+          }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid var(--secondary);
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        
+        .chatbot-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+        }
+     #intro-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: 50;
+    }
+
+    #video-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: black;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 min-h-screen m-0 p-0 overflow-x-hidden">
+
+
+  <div id="video-overlay">
+    <video id="intro-video" autoplay muted playsinline>
+      <source src="/madhanportintro - Made with Clipchamp_1747925438279.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video> 
+  </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <!-- Navigation -->
+    
+
+
+  <nav class="glass-card fixed w-full z-50 py-4 px-6">
+    <div class="container max-w-screen-xl mx-auto flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold gradient-text">Madhan Kumar A</a>
+      <div class="hidden md:flex space-x-8">
+        <a href="#home" class="hover:text-purple-300 transition">Home</a>
+        <a href="#about" class="hover:text-purple-300 transition">About</a>
+        <a href="#skills" class="hover:text-purple-300 transition">Skills</a>
+        <a href="#projects" class="hover:text-purple-300 transition">Projects</a>
+        <a href="#journey" class="hover:text-purple-300 transition">My Journey</a>
+        <a href="#contact" class="hover:text-purple-300 transition">Contact</a>
+      </div>
+    </div>
+  
+    </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden absolute left-0 right-0 bg-gray-900 mt-4 py-2 px-4 rounded-lg">
+            <a href="#home" class="block py-2 hover:text-purple-300 transition">Home</a>
+            <a href="#about" class="block py-2 hover:text-purple-300 transition">About</a>
+            <a href="#skills" class="block py-2 hover:text-purple-300 transition">Skills</a>
+            <a href="#projects" class="block py-2 hover:text-purple-300 transition">Projects</a>
+            <a href="#journey" class="block py-2 hover:text-purple-300 transition">My Journey</a>
+            <a href="#contact" class="block py-2 hover:text-purple-300 transition">Contact</a>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden hidden">
+       <div class="particles" id="particles"></div>
+       <div class="container mx-auto px-6 text-center z-10">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 typewriter">I'm Madhan Kumar</h1>
+        <h2 class="text-2xl md:text-3xl mb-8 gradient-text">B.Tech Student</h2>
+        <p class="text-lg md:text-xl mb-12 max-w-2xl mx-auto opacity-90">Passionate about technology and innovation</p>
+        <a href="#about" class="inline-block px-8 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full font-semibold hover:opacity-90 transition transform hover:scale-105">
+      Explore More
+    </a>
+    </div>
+   </section>
+
+  
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/3 flex justify-center">
+                    <div class="w-64 h-64 rounded-full overflow-hidden border-4 border-indigo-500/30">
+                      <img src="https://i.ibb.co/nhFpK5z/me.jpg" alt="me" border="0">
+                    </div>
+                </div>
+                <div class="w-full md:w-2/3">
+                    <div class="glass-card p-8 rounded-xl">
+                        <p class="text-lg mb-6">
+                            I'm a Passionate B.Tech (Artificial Intelligence & Machine Learning)  student with a strong foundation in machine learning algorithms and a keen interest in developing defense and weapon technologies. I am also passionate about front-end development, and I enjoy combining creativity with technical skills to build engaging user interfaces. A quick learner and highly motivated individual, I am always eager to take on new challenges and expand my knowledge in both emerging technologies and real-world applications.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="px-4 py-2 bg-indigo-900/50 rounded-full text-sm font-medium">Artificial Intelligence & Machine Learning</div>
+                            <div class="px-4 py-2 bg-purple-900/50 rounded-full text-sm font-medium">Web technologies</div>
+                            <div class="px-4 py-2 bg-emerald-900/50 rounded-full text-sm font-medium">Robotics with IOT </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-6 bg-gray-900/50">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">My Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Programming Languages -->
+
+                <div class="flip-card relative w-80 h-96">
+                    <div class="flip-card-inner absolute inset-0">
+                      
+                      <!-- Front Side -->
+                      <div class="flip-card-front glass-card bg-gray-900/50 p-6 rounded-xl h-full flex flex-col items-center justify-center absolute inset-0">
+                        <div class="text-4xl mb-4 text-indigo-400">
+                          <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Programming Languages</h3>
+                        <p class="text-gray-300">Languages I'm proficient in</p>
+                      </div>
+                      
+                      <!-- Back Side -->
+                      <div class="flip-card-back glass-card bg-gray-900/50 p-6 rounded-xl h-full absolute inset-0">
+                        <ul class="space-y-2 text-white">
+                          <li class="flex items-center">
+                            <span class="w-4 h-4 bg-indigo-500 rounded-full mr-2"></span>
+                            Python
+                          </li>
+                          <li class="flex items-center">
+                            <span class="w-4 h-4 bg-indigo-500 rounded-full mr-2"></span>
+                            C
+                          </li>
+                          <li class="flex items-center">
+                            <span class="w-4 h-4 bg-indigo-500 rounded-full mr-2"></span>
+                            SQL
+                          </li>
+                          <li class="flex items-center">
+                            <span class="w-4 h-4 bg-indigo-500 rounded-full mr-2"></span>
+                            Matlab
+                          </li>
+                        </ul>
+                      </div>
+                      
+                    </div>
+                  </div>
+                
+                <!-- Web Development -->
+                <div class="flip-card relative w-80 h-96">
+                    <div class="flip-card-inner absolute inset-0">
+                      
+                      <!-- Front Side -->
+                      <div class="flip-card-front glass-card bg-gray-900/50 p-6 rounded-xl h-full flex flex-col items-center justify-center absolute inset-0">
+                        <div class="text-4xl mb-4 text-purple-500">
+                            <i class=" fa-solid fa-globe"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Web Development Skills</h3>
+                        <p class="text-gray-300">WEB Skills I'm proficient in</p>
+                      </div>
+                      
+                      <!-- Back Side -->
+                      <div class="flip-card-back glass-card bg-gray-900/50 p-6 rounded-xl h-full absolute inset-0">
+                        <ul class="space-y-2 text-white">
+                          <li class="flex items-center">
+                            <span class="w-4 h-4 bg-purple-500 rounded-full mr-2"></span>
+                            HTML
+                          </li>
+                          <li class="flex items-center">
+                            <span class="w-4 h-4 bg-purple-500 rounded-full mr-2"></span>
+                            CSS(Tailwindcss)
+                          </li>
+                          <li class="flex items-center">
+                            <span class="w-4 h-4 bg-purple-500 rounded-full mr-2"></span>
+                            Javascript
+                          </li>
+                          <li class="flex items-center">
+                            <span class="w-4 h-4 bg-purple-500 rounded-full mr-2"></span>
+                            React Js
+                          </li>
+                          <li class="flex items-center">
+                            <span class="w-4 h-4 bg-purple-500 rounded-full mr-2"></span>
+                            Node Js
+                          </li>
+                          <li class="flex items-center">
+                            <span class="w-4 h-4 bg-purple-500 rounded-full mr-2"></span>
+                            Bootstrap
+                          </li>
+                        </ul>
+                      </div>
+                      
+                    </div>
+                  </div>
+              
+                
+                <!-- Frameworks & Libraries -->
+                <div class="flip-card relative w-80 h-96">
+                    <div class="flip-card-inner absolute inset-0">
+                      
+                      <!-- Front Side -->
+                      <div class="flip-card-front glass-card bg-gray-900/50 p-6 rounded-xl h-full flex flex-col items-center justify-center absolute inset-0">
+                        <div class="text-4xl mb-4 text-teal-400">
+                         <i class="fa-solid fa-cubes"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Frameworks & Libraries</h3>
+                        <p class="text-gray-300">Tools I use to Develop</p>
+                      </div>
+                      
+                      <!-- Back Side -->
+                      <div class="flip-card-back glass-card bg-gray-900/50 p-6 rounded-xl h-full absolute inset-0">
+                        <ul class="space-y-2 text-white">
+                          <li class="flex items-center">
+                            <span class="w-4 h-4 bg-teal-500 rounded-full mr-2"></span>
+                            Google Colab
+                          </li>
+                          <li class="flex items-center">
+                            <span class="w-4 h-4 bg-teal-500 rounded-full mr-2"></span>
+                            Jupyter Nootbook
+                          </li>
+                          <li class="flex items-center">
+                            <span class="w-4 h-4 bg-teal-500 rounded-full mr-2"></span>
+                            VS Code
+                          </li>
+                          <li class="flex items-center">
+                            <span class="w-4 h-4 bg-teal-500 rounded-full mr-2"></span>
+                            Arduino
+                          </li>
+                          <li class="flex items-center">
+                            <span class="w-4 h-4 bg-teal-500 rounded-full mr-2"></span>
+                            Node Js
+                          </li>
+                          <li class="flex items-center">
+                            <span class="w-4 h-4 bg-teal-500 rounded-full mr-2"></span>
+                            Firebase Baas
+                          </li>
+                          <li class="flex items-center">
+                            <span class="w-4 h-4 bg-teal-500 rounded-full mr-2"></span>
+                            Formspree
+                          </li>
+                        </ul>
+                      </div>
+                      
+                    </div>
+                  </div>
+                
+                <!-- Soft Skills -->
+                <div class="flip-card relative w-80 h-96">
+                    <div class="flip-card-inner absolute inset-0">
+                      
+                      <!-- Front Side -->
+                     <div class="flip-card-front glass-card bg-gray-900/50 p-6 rounded-xl h-full flex flex-col items-center justify-center absolute inset-0">
+                        <div class="text-4xl mb-4 text-purple-500">
+                          <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Soft Skills</h3>
+                        <p class="text-gray-300">My proactive Skills in team-management</p>
+                      </div>
+                      
+                      <!-- Back Side -->
+                      <div class="flip-card-back glass-card bg-gray-900/50 p-6 rounded-xl h-full absolute inset-0">
+                        <ul class="space-y-2 text-white">
+                          <li class="flex items-center">
+                            <span class="w-4 h-4 bg-purple-500 rounded-full mr-2"></span>
+                            I possess strong communication and project management abilities, honed through internships and academic projects. My proficiency in content editing and spoken English supports effective collaboration. I’m a proactive team player with a problem-solving mindset, capable of adapting quickly and leading tasks efficiently in dynamic and technology-driven environments.
+                          </li>
+                         
+                        </ul>
+                      </div>
+                      
+                    </div>
+                  </div>
+                
+                <!-- Leadership -->
+                <div class="flip-card relative w-80 h-96">
+                    <div class="flip-card-inner absolute inset-0">
+                      
+                      <!-- Front Side -->
+                      <div class="flip-card-front glass-card bg-gray-900/50 p-6 rounded-xl h-full flex flex-col items-center justify-center absolute inset-0">
+                        <div class="text-4xl mb-4 text-indigo-400">
+                         <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">problem-solving</h3>
+                        <p class="text-gray-300">Languages I'm proficient in</p>
+                      </div>
+                      
+                      <!-- Back Side -->
+                      <div class="flip-card-back glass-card bg-gray-900/50 p-6 rounded-xl h-full absolute inset-0">
+                        <ul class="space-y-2 text-white">
+                          <li class="flex items-center">
+                            <span class="w-4 h-4 bg-indigo-500 rounded-full mr-2"></span>
+                           I am a resilient leader and dedicated team player, known for motivating my team during challenges and guiding them toward recovery and success. With strong team management skills, I foster collaboration, boost morale, and ensure every member contributes effectively, turning setbacks into opportunities for growth and achievement.
+                          </li>
+                        </ul>
+                      </div>
+                      
+                    </div>
+                  </div>
+                
+                <!-- Collaboration -->
+                <div class="flip-card relative w-80 h-96">
+                    <div class="flip-card-inner absolute inset-0">
+                      
+                      <!-- Front Side -->
+                      <div class="flip-card-front glass-card bg-gray-900/50 p-6 rounded-xl h-full flex flex-col items-center justify-center absolute inset-0">
+                        <div class="text-4xl mb-4 text-teal-400">
+                         <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Programming Languages</h3>
+                        <p class="text-gray-300">Languages I'm proficient in</p>
+                      </div>
+                      
+                      <!-- Back Side -->
+                      <div class="flip-card-back glass-card bg-gray-900/50 p-6 rounded-xl h-full absolute inset-0">
+                        <ul class="space-y-2 text-white">
+                          <li class="flex items-center">
+                            <span class="w-4 h-4 bg-teal-500 rounded-full mr-2"></span>
+                            Effective Communication
+                          </li>
+                         <li class="flex items-center">
+                            <span class="w-4 h-4 bg-teal-500 rounded-full mr-2"></span>
+                            Team Leadership
+                          </li>
+                         <li class="flex items-center">
+                            <span class="w-4 h-4 bg-teal-500 rounded-full mr-2"></span>
+                            Problem Solving 
+                          </li>
+                         <li class="flex items-center">
+                            <span class="w-4 h-4 bg-teal-500 rounded-full mr-2"></span>
+                            Project Management 
+                          </li>
+                          <li class="flex items-center">
+                            <span class="w-4 h-4 bg-teal-500 rounded-full mr-2"></span>
+                             Technical Collaboration
+                          </li>
+                         
+                         
+                        </ul>
+                      </div>
+                      
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">My Projects</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Expense Tracker -->
+                <div class="glass-card rounded-xl overflow-hidden transition transform hover:scale-105">
+                    <div class="p-6">
+                        <div class="text-indigo-400 text-3xl mb-4">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2"> SpamShield: Machine Learning-Based Email Spam
+                            Detection Using Decision Trees</h3>
+                        <p class="text-gray-300 mb-4">Developed a command-line application to help users manage and analyze daily expenses efficiently.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-indigo-900/50 rounded-full text-xs">Python</span>
+                            <span class="px-2 py-1 bg-indigo-900/50 rounded-full text-xs">Support Vector Machine (SVM)</span>
+                            <span class="px-2 py-1 bg-indigo-900/50 rounded-full text-xs">TensorFlow/Keras</span>
+                        </div>
+                        <button class="text-indigo-400 hover:text-indigo-300 transition" onclick="openModal('expenseModal')">
+                            View Details <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Snake Game -->
+                <div class="glass-card rounded-xl overflow-hidden transition transform hover:scale-105">
+                    <div class="p-6">
+                        <div class="text-purple-400 text-3xl mb-4">
+                            <i class="fa-solid fa-music"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2"> Battle Music Webapplication</h3>
+                        <p class="text-gray-300 mb-4">Battlefield Music is a music streaming web application developed as a mini project during my internship.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-purple-900/50 rounded-full text-xs">React Js</span>
+                            <span class="px-2 py-1 bg-purple-900/50 rounded-full text-xs">Tailwindcss</span>
+                            <span class="px-2 py-1 bg-purple-900/50 rounded-full text-xs">Firebase</span>
+                        </div>
+                        <button class="text-purple-400 hover:text-purple-300 transition" onclick="openModal('snakeModal')">
+                            View Details <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Crop Recommendation -->
+                <div class="glass-card rounded-xl overflow-hidden transition transform hover:scale-105">
+                    <div class="p-6">
+                        <div class="text-emerald-400 text-3xl mb-4">
+                           <i class="fa-solid fa-spider"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2"> Hexapod robot for defence technology</h3>
+                        <p class="text-gray-300 mb-4">AI-powered web application for crop recommendation by classifying soil type using ResNet-50.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-emerald-900/50 rounded-full text-xs">ML (Python) </span>
+                            <span class="px-2 py-1 bg-emerald-900/50 rounded-full text-xs">Raspberry Pi</span>
+                            <span class="px-2 py-1 bg-emerald-900/50 rounded-full text-xs">Open CV and Facial Recognition</span>
+                        </div>
+                        <button class="text-emerald-400 hover:text-emerald-300 transition" onclick="openModal('cropModal')">
+                            View Details <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Project Modals -->
+        <div id="expenseModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+            <div class="glass-card p-8 rounded-xl max-w-2xl mx-4 max-h-[80vh] overflow-y-auto">
+                <div class="flex justify-between items-start mb-6">
+                    <h3 class="text-2xl font-bold"> SpamShield: Machine Learning-Based Email Spam
+                        Detection Using Decision Trees</h3>
+                    <button onclick="closeModal('expenseModal')" class="text-gray-400 hover:text-white">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <p class="mb-4">This project aims to design and develop an intelligent spam email
+                    detection system using machine learning and natural language
+                    processing (NLP) techniques, enabling the accurate
+                    classification of emails as spam or legitimate.</p>
+                <p class="mb-6">Spam Shield is an intelligent email spam detection system designed to accurately classify emails as spam or legitimate using advanced machine learning algorithms like Support Vector Machine (SVM), Naive Bayes, and Random Forest. By leveraging Natural Language Processing (NLP) techniques, the system analyzes the content and patterns within emails to identify suspicious or harmful messages. Spam Shield aims to enhance email security by reducing unwanted emails and protecting users from potential threats.</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 bg-indigo-900/50 rounded-full text-sm">Python</span>
+                    <span class="px-3 py-1 bg-indigo-900/50 rounded-full text-sm">Support Vector Machine (SVM)</span>
+                    <span class="px-3 py-1 bg-indigo-900/50 rounded-full text-sm">TensorFlow/Keras</span>
+                    <span class="px-3 py-1 bg-indigo-900/50 rounded-full text-sm">K-Nearest Neighbors (KNN)</span>
+                </div>
+            </div>
+        </div>
+        
+        <div id="snakeModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+            <div class="glass-card p-8 rounded-xl max-w-2xl mx-4 max-h-[80vh] overflow-y-auto">
+                <div class="flex justify-between items-start mb-6">
+                    <h3 class="text-2xl font-bold"> Battle Music Webapplication</h3>
+                    <button onclick="closeModal('snakeModal')" class="text-gray-400 hover:text-white">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <p class="mb-4">Battlefield Music is a music streaming web application developed as a mini project during my internship. The project was built using frontend technologies including HTML, Tailwind CSS, and React.js, ensuring a responsive and modern user interface. For backend services, I integrated Firebase to manage real-time data storage, authentication, and hosting. </p>
+                <p class="mb-6">The app allows users to browse, stream, and manage their favorite music seamlessly, providing a user-friendly experience similar to popular music platforms. This project helped me deepen my understanding of full-stack development and the practical integration of cloubased backends with dynamic frontends.</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 bg-purple-900/50 rounded-full text-sm">React Js</span>
+                    <span class="px-3 py-1 bg-purple-900/50 rounded-full text-sm">Tailwindcss</span>
+                    <span class="px-3 py-1 bg-purple-900/50 rounded-full text-sm">Firebase</span>
+                    <span class="px-3 py-1 bg-purple-900/50 rounded-full text-sm">HTML 5</span>
+                </div>
+            </div>
+        </div>
+        
+        <div id="cropModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+            <div class="glass-card p-8 rounded-xl max-w-2xl mx-4 max-h-[80vh] overflow-y-auto">
+                <div class="flex justify-between items-start mb-6">
+                    <h3 class="text-2xl font-bold">Web-based Smart Crop Recommendation System</h3>
+                    <button onclick="closeModal('cropModal')" class="text-gray-400 hover:text-white">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <p class="mb-4"> The project made using machine learning algorithm and raspberry pie as Controller , I have developed this project for my international conference competition. This was my first robotic project. I have been developed in my college academic. It was GUI integrated with Python project with motion, tracking colour detection motion and balance and using open CV</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 bg-emerald-900/50 rounded-full text-sm">Python</span>
+                    <span class="px-3 py-1 bg-emerald-900/50 rounded-full text-sm">ResNet-50</span>
+                    <span class="px-3 py-1 bg-emerald-900/50 rounded-full text-sm">OpenWeather API</span>
+                    <span class="px-3 py-1 bg-emerald-900/50 rounded-full text-sm">Decision Tree</span>
+                    <span class="px-3 py-1 bg-emerald-900/50 rounded-full text-sm">LLM Integration</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Journey Section -->
+    <section id="journey" class="py-20 px-6 bg-gray-900/50">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">My Journey</h2>
+            
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="absolute left-4 md:left-1/2 h-full w-0.5 bg-gradient-to-b from-indigo-500 to-purple-600"></div>
+                
+                <!-- Timeline items -->
+                <div class="space-y-8">
+                    <!-- 2021 -->
+                    <div class="relative pl-12 md:pl-0 md:w-1/2 ml-auto md:pr-12">
+                        <div class="glass-card p-6 rounded-xl">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold">X Studies</h3>
+                                <span class="px-3 py-1 bg-indigo-900/50 rounded-full text-sm">2021</span>
+                            </div>
+                            <p class="text-gray-300">Completed Secondary School Certificate with excellent academic performance.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 2021-2023 -->
+                    <div class="relative pl-12 md:pl-0 md:w-1/2 md:ml-0 md:mr-auto md:pr-0 md:pl-12">
+                        <div class="glass-card p-6 rounded-xl">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold">XII studies</h3>
+                                <span class="px-3 py-1 bg-purple-900/50 rounded-full text-sm">2021-2023</span>
+                            </div>
+                            <p class="text-gray-300">Completed intermediate education with focus on science and mathematics.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 2023-2027 -->
+                    <div class="relative pl-12 md:pl-0 md:w-1/2 ml-auto md:pr-12">
+                        <div class="glass-card p-6 rounded-xl">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold">B.Tech Student</h3>
+                                <span class="px-3 py-1 bg-emerald-900/50 rounded-full text-sm">2023-2027</span>
+                            </div>
+                            <p class="text-gray-300">Currently pursuing Bachelor of Technology in Artificial Intelligence & Machine Learning , developing technical skills and working on various projects.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">Get In Touch</h2>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="w-full md:w-1/2">
+                    <div class="glass-card p-8 rounded-xl h-full">
+                        <h3 class="text-xl font-bold mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="text-2xl text-indigo-400 mr-4 mt-1">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">Email</h4>
+                                    <a href="mailto:madhan49mka@gmail.com" class="text-gray-300 hover:text-indigo-300 transition">madhan49mka@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-2xl text-purple-400 mr-4 mt-1">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">Phone</h4>
+                                    <a href="tel:+91 94436 63730" class="text-gray-300 hover:text-purple-300 transition">+91 94436 63730</a>
+                                    <a href="tel:+91 8754 34905" class="text-gray-300 hover:text-purple-300 transition">+91 87542 34905</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-2xl text-emerald-400 mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">Location</h4>
+                                    <p class="text-gray-300">India</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-medium mb-4">Connect with me</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://www.linkedin.com/in/madhan-kumar-a782aa2aa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="w-10 h-10 rounded-full bg-indigo-900/50 flex items-center justify-center text-xl hover:bg-indigo-800 transition">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://github.com/MADHAN49" class="w-10 h-10 rounded-full bg-purple-900/50 flex items-center justify-center text-xl hover:bg-purple-800 transition">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="+91 9443663730" class="w-10 h-10 rounded-full bg-emerald-900/50 flex items-center justify-center text-xl hover:bg-emerald-800 transition">
+                                    <i class="fab fa-whatsapp" ></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-1/2">
+                    <div class="glass-card p-8 rounded-xl">
+                        <h3 class="text-xl font-bold mb-6">Send Me a Message</h3>
+                        <form action="https://formspree.io/f/xzzrqgne" method="POST" enctype="multipart/form-data" class="space-y-4">
+    
+                            <div>
+                                <label for="name" class="block mb-2">Name</label>
+                                <input type="text" id="name" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block mb-2">Email</label>
+                                <input type="email" id="email" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </div>
+                            
+                            <div>
+                                <label for="subject" class="block mb-2">Subject</label>
+                                <input type="text" id="subject" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block mb-2">Message</label>
+                                <textarea id="message" rows="4" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg px-6 py-3 font-semibold hover:opacity-90 transition">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-8 px-6 bg-gray-900/80">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="#" class="text-2xl font-bold gradient-text">Madhan Kumar A</a>
+                    <p class="text-gray-400 mt-2">B.Tech (Artificial Intelligence & Machine Learning) </p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#home" class="text-gray-400 hover:text-indigo-300 transition">Home</a>
+                    <a href="#about" class="text-gray-400 hover:text-indigo-300 transition">About</a>
+                    <a href="#projects" class="text-gray-400 hover:text-indigo-300 transition">Projects</a>
+                    <a href="#contact" class="text-gray-400 hover:text-indigo-300 transition">Contact</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+                <p>&copy; 2025 Madhan Kumar A . All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Chatbot Icon -->
+    <div class="fixed bottom-6 right-6 z-40">
+        <a href="#contact"> <button class="chatbot-icon w-14 h-14 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-lg hover:shadow-xl transition"> 
+            <i class="fas fa-comment-dots text-xl"></i>
+        </button> </a>
+    </div>
+    
+    <!-- Download Resume Button -->
+    <div class="fixed bottom-6 left-6 z-40">
+        <a href="C.V.pdf" class="inline-flex items-center px-5 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full font-semibold hover:opacity-90 transition transform hover:scale-105 shadow-lg">
+            <i class="fas fa-download mr-2"></i> Download Resume
+        </a>
+    </div>
+    
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const video = document.getElementById('intro-video');
+        const overlay = document.getElementById('video-overlay');
+        const homeSection = document.getElementById('home');
+
+        video.addEventListener('ended', () => {
+            overlay.style.display = 'none';
+            document.body.classList.remove('noscroll');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            homeSection.classList.remove('hidden'); // 👈 Show typewriter section
+       });
+
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+            updateThemeIcon();
+        });
+        
+        function updateThemeIcon() {
+            if (html.classList.contains('dark')) {
+                themeToggle.innerHTML = '<i class="fas fa-sun text-xl"></i>';
+            } else {
+                themeToggle.innerHTML = '<i class="fas fa-moon text-xl"></i>';
+            }
+        }
+        
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'light') {
+            html.classList.remove('dark');
+        }
+        updateThemeIcon();
+        
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Progress Bar
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollProgress = (scrollTop / scrollHeight) * 100;
+            document.getElementById('progressBar').style.width = scrollProgress + '%';
+        });
+        
+        // Modal Functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside
+        document.querySelectorAll('[id$="Modal"]').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal(this.id);
+                }
+            });
+        });
+        
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+           document.getElementById("contactForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = {
+        name: this.Name.value,
+        email: this.Email.value,
+        subject: this.Subject.value,
+        message: this.Message.value
+    };
+
+    try {
+        const response = await fetch("https://formspree.io/f/xzzrqgne", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(formData)
+        });
+
+        if (response.ok) {
+            alert("Message sent successfully!");
+            this.reset();
+        } else {
+            alert("Failed to send message.");
+        }
+    } catch (error) {
+        alert("Error: " + error.message);
+    }
+});
+
+        
+        // Create particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random size between 1px and 3px
+                const size = Math.random() * 2 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random position
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Random opacity
+                particle.style.opacity = Math.random() * 0.6 + 0.1;
+                
+                // Animation
+                const duration = Math.random() * 20 + 10;
+                particle.style.animation = `float ${duration}s infinite ease-in-out`;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // Initialize particles when page loads
+        window.addEventListener('load', createParticles);
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
